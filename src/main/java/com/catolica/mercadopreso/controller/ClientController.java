@@ -12,20 +12,21 @@ public class ClientController {
     @Autowired
     private ClientService service;
 
+    // ---- AUTH ----
+
+    @PostMapping("/login")
+    public Long loginClient(@RequestBody Client client) {
+        return service.authClient(client.getName(), client.getPassword());
+    }
+
+    // ---- CRUD ----
+
     @PostMapping("/create-user")
     public Client createClient(@RequestBody Client client) {
         return service.createNewClient(client);
     }
 
-    @PostMapping("/login")
-    public Long loginClient(@RequestBody Client client) {
-       return service.authClient(client.getName(), client.getPassword());
-    }
 
-    @GetMapping
-    public Client getClientById(@RequestParam Long id) {
-        return service.getClientById(id);
-    }
 
 
 

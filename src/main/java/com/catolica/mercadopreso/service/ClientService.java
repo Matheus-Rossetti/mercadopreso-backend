@@ -9,6 +9,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Optional;
+
 @Service
 public class ClientService {
 
@@ -18,39 +20,39 @@ public class ClientService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    // ---- AUTH ----
 
-    public Client createNewClient(Client client) {
-
-        // Hasha a senha antes de salvar
-        client.setPassword(passwordEncoder.encode(client.getPassword()));
-
-        return repository.save(client);
-    }
-
-    public Long authClient(String name, String password){
+    public Long authClient(String name, String password) {
         Client client = repository.findByName(name);
         boolean rightPassword = passwordEncoder.matches(password, client.getPassword());
 
-        if (rightPassword){
+        if (rightPassword) {
             return client.getId();
-        }else {
+        } else {
             return 0L;
         }
-
     }
 
-    public Client getClientById(Long id) {
+    // ---- CRUD ----
 
-        Client client = repository.findById(id).orElse(null);
-
-        if (client == null) {
-            client = new Client();
-            return client;
-        } // garante que se não tiver um client com o 'id' recebido, retorna um com os parametros nulos
-          // caso contrário, não retorna nada
-
-        return client;
+    public Client createNewClient(Client client) {
+        // Hasha a senha antes de salvar
+        client.setPassword(passwordEncoder.encode(client.getPassword()));
+        return repository.save(client);
     }
+
+    public Optional<Client> getClientById(Long id) {
+        return repository.findById(id);
+    }
+
+    public Client updateClient(Client client) {
+        return repository.save(client);
+    }
+
+    public void deleteClient(Long id) {
+        repository.deleteById(id);
+    }
+
 
 
 }
