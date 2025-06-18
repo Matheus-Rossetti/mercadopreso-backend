@@ -1,14 +1,11 @@
 package com.catolica.mercadopreso.repository;
 
-import com.catolica.mercadopreso.model.Produto; // A classe/modelo/tabela 'Produto'
-
+import com.catolica.mercadopreso.model.Product; // A classe/modelo/tabela 'Produto'
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-@Repository // Marca essa interface como um repo JPA
-            // 'JPA' é um dos ORM do Spring
-            // ORMs servem para se comunicar com DBs direto pelo código
-public interface ProdutoRepository extends JpaRepository<Produto, Long> {
+@Repository
+public interface ProductRepository extends JpaRepository<Product, Long> {
 
 }
 
