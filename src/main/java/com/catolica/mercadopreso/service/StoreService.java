@@ -1,9 +1,12 @@
 package com.catolica.mercadopreso.service;
 
+import com.catolica.mercadopreso.model.Client;
 import com.catolica.mercadopreso.model.Store;
 import com.catolica.mercadopreso.repository.StoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class StoreService {
@@ -15,6 +18,22 @@ public class StoreService {
         return repository.save(store);
     }
 
+    // ---- CRUD ----
 
+    public Store createNewClient(Store store) {
+        return repository.save(store);
+    }
+
+    public Optional<Store> getClientById(Long id) {
+        return repository.findById(id);
+    }
+
+    public Store updateStore(Store store) {
+        return repository.save(store);
+    }
+
+    public void deleteStore(Long id) {
+        repository.deleteById(id);
+    }
 
 }

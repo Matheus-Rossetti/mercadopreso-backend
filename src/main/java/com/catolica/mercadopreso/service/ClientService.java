@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
-
 import java.util.Optional;
 
 @Service
@@ -52,7 +51,4 @@ public class ClientService {
     public void deleteClient(Long id) {
         repository.deleteById(id);
     }
-
-
-
 }
