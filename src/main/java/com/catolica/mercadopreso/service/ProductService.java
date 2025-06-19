@@ -1,9 +1,7 @@
 package com.catolica.mercadopreso.service;
 
 import com.catolica.mercadopreso.model.Product;
-import com.catolica.mercadopreso.model.Store;
 import com.catolica.mercadopreso.repository.ProductRepository;
-import com.catolica.mercadopreso.repository.StoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -32,5 +30,4 @@ public class ProductService {
     public void deleteProduct(Long id) {
         repository.deleteById(id);
     }
-
 }

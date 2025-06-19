@@ -16,7 +16,6 @@ public class Client {
 
     private String name; // Campo de nome
     private String password;
-    private String address;
     private Double amount_spent;
 
     @OneToMany(mappedBy = "client")

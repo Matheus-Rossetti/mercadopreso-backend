@@ -12,7 +12,7 @@ public class Category {
     @Id // Chave primária
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto increment da chave primária
     private Long id;
-
-
     private String name;
+
+
 }

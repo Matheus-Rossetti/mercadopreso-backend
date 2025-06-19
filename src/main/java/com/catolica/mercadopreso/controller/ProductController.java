@@ -1,9 +1,7 @@
 package com.catolica.mercadopreso.controller;
 
 import com.catolica.mercadopreso.model.Product;
-import com.catolica.mercadopreso.model.Store;
 import com.catolica.mercadopreso.service.ProductService;
-import com.catolica.mercadopreso.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

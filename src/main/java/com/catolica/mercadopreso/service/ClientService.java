@@ -35,6 +35,10 @@ public class ClientService {
     // ---- CRUD ----
 
     public Client createNewClient(Client client) {
+
+        String name = repository.findByName(client.getName()).getName();
+        if (name != null) {return client;}
+
         // Hasha a senha antes de salvar
         client.setPassword(passwordEncoder.encode(client.getPassword()));
         return repository.save(client);
