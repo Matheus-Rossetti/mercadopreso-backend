@@ -18,17 +18,17 @@ public class StoreController {
     // ---- CRUD ----
 
     @PostMapping()
-    public Store createClient(@RequestBody Store store) {
+    public Store createStore(@RequestBody Store store) {
         return service.createNewClient(store);
     }
 
     @GetMapping()
-    public Optional<Store> readClient(@RequestParam Long id) {
-        return service.getClientById(id);
+    public Optional<Store> readStore(@RequestParam Long id) {
+        return service.getStoreById(id);
     }
 
     @PutMapping()
-    public Store updateClient(@RequestBody Store store) {
+    public Store updateStore(@RequestBody Store store) {
         return service.updateStore(store);
     }
 

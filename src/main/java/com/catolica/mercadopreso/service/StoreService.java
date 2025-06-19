@@ -24,7 +24,7 @@ public class StoreService {
         return repository.save(store);
     }
 
-    public Optional<Store> getClientById(Long id) {
+    public Optional<Store> getStoreById(Long id) {
         return repository.findById(id);
     }
 

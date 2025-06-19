@@ -1,5 +1,6 @@
 package com.catolica.mercadopreso.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*; // Importa as anotações (os '@'), para interagir com o DB
 import lombok.Data; // Lombok ajuda a diminuir a sintaxe do JAVA, não precisamos escrever getters nem seters
 
@@ -22,4 +23,9 @@ public class Product {
     private Double discount;
 
     private List<String> images;
+
+    @ManyToOne
+    @JsonBackReference
+    @JoinColumn(name = "store_id")
+    private Store store;
 }
