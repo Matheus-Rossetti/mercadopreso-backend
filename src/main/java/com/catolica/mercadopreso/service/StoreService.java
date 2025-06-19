@@ -14,13 +14,9 @@ public class StoreService {
     @Autowired
     private StoreRepository repository;
 
-    public Store createNewStore(Store store) {
-        return repository.save(store);
-    }
-
     // ---- CRUD ----
 
-    public Store createNewClient(Store store) {
+    public Store createNewStore(Store store) {
         return repository.save(store);
     }
 

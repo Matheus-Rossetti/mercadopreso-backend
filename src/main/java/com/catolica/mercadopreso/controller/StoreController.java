@@ -19,7 +19,7 @@ public class StoreController {
 
     @PostMapping()
     public Store createStore(@RequestBody Store store) {
-        return service.createNewClient(store);
+        return service.createNewStore(store);
     }
 
     @GetMapping()
