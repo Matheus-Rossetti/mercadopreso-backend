@@ -1,15 +1,10 @@
 package com.catolica.mercadopreso.service;
 
-import com.catolica.mercadopreso.model.Cart;
 import com.catolica.mercadopreso.model.Client;
-import com.catolica.mercadopreso.model.Product;
-import com.catolica.mercadopreso.repository.CartRepository;
 import com.catolica.mercadopreso.repository.ClientRepository;
-import com.catolica.mercadopreso.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 import java.util.Optional;
 
 @Service

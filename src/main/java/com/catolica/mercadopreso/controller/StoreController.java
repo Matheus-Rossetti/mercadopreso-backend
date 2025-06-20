@@ -6,6 +6,7 @@ import com.catolica.mercadopreso.service.StoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -14,6 +15,11 @@ public class StoreController {
 
     @Autowired
     private StoreService service;
+
+    @GetMapping("/all")
+    public List<Store> getAllStores(){
+        return service.getAllStores();
+    }
 
     // ---- CRUD ----
 

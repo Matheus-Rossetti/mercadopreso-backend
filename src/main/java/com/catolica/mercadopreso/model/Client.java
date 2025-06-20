@@ -21,12 +21,4 @@ public class Client {
     @OneToMany(mappedBy = "client")
 //    @JsonManagedReference
     private List<Store> stores;
-
-    @OneToMany(mappedBy = "client")
-//    @JsonManagedReference
-    private List<Orders> orders;
-
-    @OneToOne(mappedBy = "client")
-//    @JsonManagedReference
-    private Cart cart;
 }
