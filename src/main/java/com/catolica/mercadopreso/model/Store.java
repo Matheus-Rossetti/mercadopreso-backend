@@ -14,7 +14,6 @@ public class Store {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto increment da chave primária
     private Long id;
 
-
     private String name;
     private String banner_image;
 

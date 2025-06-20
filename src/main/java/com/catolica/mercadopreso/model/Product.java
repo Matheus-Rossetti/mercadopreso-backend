@@ -18,11 +18,7 @@ public class Product {
     private String description;
     private Integer stock;
     private Integer amount_sold;
-    private Long store_id;
-    private Long category_id;
-    private Double discount;
-
-    private List<String> images;
+    private String image;
 
     @ManyToOne
     @JsonBackReference

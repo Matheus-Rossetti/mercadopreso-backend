@@ -1,7 +1,9 @@
 package com.catolica.mercadopreso.service;
 
+import com.catolica.mercadopreso.model.Cart;
 import com.catolica.mercadopreso.model.Client;
 import com.catolica.mercadopreso.model.Product;
+import com.catolica.mercadopreso.repository.CartRepository;
 import com.catolica.mercadopreso.repository.ClientRepository;
 import com.catolica.mercadopreso.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,10 +37,6 @@ public class ClientService {
     // ---- CRUD ----
 
     public Client createNewClient(Client client) {
-
-        String name = repository.findByName(client.getName()).getName();
-        if (name != null) {return client;}
-
         // Hasha a senha antes de salvar
         client.setPassword(passwordEncoder.encode(client.getPassword()));
         return repository.save(client);
@@ -49,6 +47,8 @@ public class ClientService {
     }
 
     public Client updateClient(Client client) {
+        // Hasha a senha antes de salvar
+        client.setPassword(passwordEncoder.encode(client.getPassword()));
         return repository.save(client);
     }
 

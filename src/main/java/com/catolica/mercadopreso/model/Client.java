@@ -19,14 +19,14 @@ public class Client {
     private Double amount_spent;
 
     @OneToMany(mappedBy = "client")
-    @JsonManagedReference
+//    @JsonManagedReference
     private List<Store> stores;
 
     @OneToMany(mappedBy = "client")
-    @JsonManagedReference
+//    @JsonManagedReference
     private List<Orders> orders;
 
     @OneToOne(mappedBy = "client")
-    @JsonManagedReference
+//    @JsonManagedReference
     private Cart cart;
 }
